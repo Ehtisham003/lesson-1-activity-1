@@ -1,21 +1,48 @@
-<html>
+<html lang="en">
 
 <head>
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascading Effects Example</title>
     <style>
-        body {
-            background-color: yellow;
-            background-image: url("ball.jpg");
-            background-repeat: no-repeat;
-            background-position: right top;
-            background-attachment: fixed;
+        /* External/Internal CSS (Higher specificity than browser defaults, lower than inline) */
+        p {
+            color: blue;
+            /* This will be overridden by the class and inline styles */
+            font-size: 16px;
+        }
+
+        .highlight {
+            color: green;
+            /* This will override the 'p' selector but be overridden by inline */
+            font-weight: bold;
+        }
+
+        #special-text {
+            color: purple;
+            /* ID selectors have the highest specificity */
+            text-decoration: underline;
         }
     </style>
+</head>
 
 <body>
-    Hello world! I am learning CSS cascading effect.It is fun to learn
+
+    <h1>Understanding CSS Cascade</h1>
+
+    <p>This is a standard paragraph. Its color is determined by the `p` selector in the internal CSS.</p>
+
+    <p class="highlight">This paragraph has a class `highlight`. Its color is green, overriding the `p` selector.</p>
+
+    <p style="color: red; font-style: italic;">This paragraph has inline styles. Its color is red, overriding both the
+        `p` selector and the `.highlight` class.</p>
+
+    <p id="special-text">This paragraph has an ID `special-text`. Its color is purple and it's underlined, as ID
+        selectors have the highest specificity.</p>
+
+    <p class="highlight" style="color: orange;">This paragraph has both a class and inline styles. The inline style for
+        color (orange) takes precedence over the class style (green).</p>
+
 </body>
-</head>
 
 </html>
