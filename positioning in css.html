@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Positions Example</title>
+    <style>
+        body {
+            height: 2000px;
+            /* To enable scrolling for 'fixed' and 'sticky' */
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .container {
+            position: relative;
+            /* Ancestor for absolute positioning */
+            width: 80%;
+            margin: 50px auto;
+            border: 2px solid blue;
+            padding: 20px;
+            min-height: 300px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #333;
+            margin: 10px;
+        }
+
+        .static-box {
+            position: static;
+            /* Default position */
+            background-color: lightcoral;
+        }
+
+        .relative-box {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background-color: lightgreen;
+        }
+
+        .absolute-box {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            background-color: lightblue;
+        }
+
+        .fixed-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: lightsalmon;
+            z-index: 100;
+            /* Ensure it stays on top */
+        }
+
+        .sticky-box {
+            position: sticky;
+            top: 0;
+            background-color: lightgoldenrodyellow;
+            z-index: 99;
+            /* Below fixed, but above normal flow */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Understanding CSS Positions</h1>
+        <p>This container demonstrates different CSS `position` values.</p>
+
+        <div class="box static-box">Static</div>
+        <div class="box relative-box">Relative</div>
+
+        <p>Some content to push the sticky box into view and demonstrate scrolling effects.</p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div class="box absolute-box">Absolute</div>
+
+        <p>More content to demonstrate fixed and sticky behavior during scroll.</p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div class="box sticky-box">Sticky</div>
+
+        <p>Final content section.</p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+    <div class="box fixed-box">Fixed</div>
+
+</body>
+
+</html>
