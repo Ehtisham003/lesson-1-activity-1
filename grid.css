@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    /* Ensures padding/border are included in element's total width/height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    /* Defines 3 columns: 200px fixed width, 1 fraction of remaining space, 200px fixed width */
+    grid-template-columns: 200px 1fr 200px;
+    /* Defines 3 rows: height based on content, 1 fraction of remaining height, height based on content */
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    /* Ensures the container takes up the full viewport height */
+    gap: 10px;
+    /* Adds space between grid items */
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Positioning the items */
+.header,
+.footer {
+    grid-column: 1 / span 3;
+    /* Spans all 3 columns */
+}
+
+.nav {
+    grid-column: 1;
+    /* Stays in the first column */
+    grid-row: 2;
+    /* Stays in the second row */
+}
+
+.main-content {
+    grid-column: 2;
+    /* Stays in the second column (the flexible one) */
+    grid-row: 2;
+    /* Stays in the second row */
+    background-color: #2196F3;
+}
+
+.sidebar {
+    grid-column: 3;
+    /* Stays in the third column */
+    grid-row: 2;
+    /* Stays in the second row */
+}
