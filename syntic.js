@@ -1,0 +1,15 @@
+<html>
+
+    <body>
+        <h1 id="myH"></h1>
+        <p id="myP"></p>
+
+        <script>
+            // My heading:
+            document.getElementById("myH").innerHTML = "Javascript Comments";
+
+            // My paragraph:
+            document.getElementById("myP").innerHTML = "My First Comment";
+        </script>
+    </body>
+</html>
