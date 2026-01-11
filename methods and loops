@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>HTML/JS Project with Loops</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 20px auto; padding: 0 10px; }
+        input, button { padding: 10px; margin-top: 5px; }
+        #list-container { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>Dynamic List Generator</h1>
+
+    <p>Enter a number to generate an ordered list of that length:</p>
+
+    <input type="number" id="item-count" min="1" value="5">
+    <button onclick="generateList()">Generate List</button>
+
+    <h2>Generated List:</h2>
+    <div id="list-container">
+        <!-- The list will be inserted here by JavaScript -->
+    </div>
+
+    <script>
+        // JavaScript function (method) to generate the list
+        function generateList() {
+            // Get the value from the input field
+            const countInput = document.getElementById('item-count');
+            const count = parseInt(countInput.value);
+            const container = document.getElementById('list-container');
+            
+            // Clear previous list
+            container.innerHTML = '';
+
+            // Check if the input is valid
+            if (isNaN(count) || count < 1) {
+                container.innerHTML = '<p style="color: red;">Please enter a valid number (1 or greater).</p>';
+                return;
+            }
+
+            // Create a new ordered list element
+            const newList = document.createElement('ol');
+
+            // Use a for loop to create list items
+            for (let i = 1; i <= count; i++) {
+                const listItem = document.createElement('li');
+                listItem.textContent = `This is item number ${i}`;
+                newList.appendChild(listItem); // Add the item to the list
+            }
+
+            // Add the completed list to the container in the HTML
+            container.appendChild(newList);
+        }
+
+        // Call the function once when the page loads to show an initial list
+        generateList();
+    </script>
+
+</body>
+</html>
